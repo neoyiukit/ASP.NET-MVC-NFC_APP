@@ -1,0 +1,35 @@
+﻿@model List<FYPNFCWineSystem.Models.TagValueAchieve>
+
+@{
+    ViewBag.Title = "WineTagAchive";
+}
+
+@if (Model.Count == 0)
+{ 
+    <p>Wine does not contains any tag value Archive</p>
+}
+else {
+    <h4>@(Model[0].ActiveWine.WineTitle)'s tag Archive </h4>
+    
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Tag Value</th>
+        </tr>
+      </thead>
+      <tbody>
+    @foreach (var tagAchieve in Model) { 
+        <tr>
+          <td>@tagAchieve.tag_value</td>
+        </tr>
+    }
+          </tbody>
+    </table>
+}
+
+@Html.ActionLink(
+    "back",
+    "index",
+    null,
+    new {@class="btn btn-default" }
+)

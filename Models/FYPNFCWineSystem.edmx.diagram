@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8c564e3fd35345d0a76ce57aa26bb182" Name="Diagram1">
+        <EntityTypeShape EntityType="FYPNFCWineSystemModel.ActiveWine" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FYPNFCWineSystemModel.Group" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FYPNFCWineSystemModel.InactiveWine" Width="1.5" PointX="7.5" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FYPNFCWineSystemModel.Project" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FYPNFCWineSystemModel.ProjectStatu" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FYPNFCWineSystemModel.Rejection" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FYPNFCWineSystemModel.SupplyChain" Width="1.5" PointX="10.5" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FYPNFCWineSystemModel.TrustStatu" Width="1.5" PointX="8.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FYPNFCWineSystemModel.WineCategory" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FYPNFCWineSystemModel.WineStatu" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <AssociationConnector Association="FYPNFCWineSystemModel.FK_ActiveWine_Project" ManuallyRouted="false" />
+        <AssociationConnector Association="FYPNFCWineSystemModel.FK_ActiveWine_Rejection" ManuallyRouted="false" />
+        <AssociationConnector Association="FYPNFCWineSystemModel.FK_ActiveWine_WineCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="FYPNFCWineSystemModel.FK_ActiveWine_WineStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="FYPNFCWineSystemModel.FK_InactiveWine_ActiveWine" ManuallyRouted="false" />
+        <AssociationConnector Association="FYPNFCWineSystemModel.FK_SupplyChain_ActiveWine" ManuallyRouted="false" />
+        <AssociationConnector Association="FYPNFCWineSystemModel.FK_Project_Group" ManuallyRouted="false" />
+        <AssociationConnector Association="FYPNFCWineSystemModel.FK_SupplyChain_Group" ManuallyRouted="false" />
+        <AssociationConnector Association="FYPNFCWineSystemModel.FK_InactiveWine_Rejection" ManuallyRouted="false" />
+        <AssociationConnector Association="FYPNFCWineSystemModel.FK_InactiveWine_WineCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="FYPNFCWineSystemModel.FK_InactiveWine_WineStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="FYPNFCWineSystemModel.FK_Project_ProjectStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="FYPNFCWineSystemModel.FK_Project_SupplyChain" ManuallyRouted="false" />
+        <AssociationConnector Association="FYPNFCWineSystemModel.FK_SupplyChain_TrustStatus" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="FYPNFCWineSystemModel.TagUpdateTransaction" Width="1.5" PointX="4.1662897431134667" PointY="0.9839962427429837" />
+        <EntityTypeShape EntityType="FYPNFCWineSystemModel.TagValueAchieve" Width="1.5" PointX="6.7131564480779486" PointY="6.0408977894302911" />
+        <AssociationConnector Association="FYPNFCWineSystemModel.FK_Table_ToTable" />
+        <AssociationConnector Association="FYPNFCWineSystemModel.FK_TagUpdateTransaction_ToTable" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

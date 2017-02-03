@@ -1,0 +1,93 @@
+﻿@model FYPNFCWineSystem.Models.Project
+
+@{
+    ViewBag.Title = "Edit Your Project";
+}
+
+<h2>Edit Your Project</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Project Details</legend>
+
+        @Html.HiddenFor(model => model.ProjectID)
+
+ <div class="editor-label">
+            @Html.LabelFor(model => model.ProjectName, "Project Name:")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ProjectName)
+            @Html.ValidationMessageFor(model => model.ProjectName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GroupID, "Under Group:")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("GroupID", String.Empty)
+            @Html.ValidationMessageFor(model => model.GroupID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SupplyID, "Supply Chain Partner:")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("SupplyID", String.Empty)
+            @Html.ValidationMessageFor(model => model.SupplyID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProjectStatusID, "Project Status:")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ProjectStatusID", String.Empty)
+            @Html.ValidationMessageFor(model => model.ProjectStatusID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProjectDescription, "Project Description:")
+        </div>
+        <div class="editor-field">
+           @Html.TextAreaFor(model => model.ProjectDescription, new { rows = 20, cols = 100 })
+            @Html.ValidationMessageFor(model => model.ProjectDescription)
+        </div>
+     
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProjectStartDate, "Project Start Date:")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ProjectStartDate)
+            @Html.ValidationMessageFor(model => model.ProjectStartDate)
+        </div>
+
+       <div class="editor-label">
+            @Html.LabelFor(model => model.ProjectEndDate, "Project End Date:")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ProjectEndDate)
+            @Html.ValidationMessageFor(model => model.ProjectEndDate)
+        </div>
+
+
+         <div class="editor-label">
+            @Html.LabelFor(model => model.WID, "Wine Involved:")
+        </div>
+        <div class="editor-field">
+           @Html.DropDownList("WID", String.Empty)
+            @Html.ValidationMessageFor(model => model.WID)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

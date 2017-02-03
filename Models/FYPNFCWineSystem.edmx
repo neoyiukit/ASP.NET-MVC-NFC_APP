@@ -1,0 +1,1076 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FYPNFCWineSystemModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="FYPNFCWineSystemModelStoreContainer">
+          <EntitySet Name="ActiveWine" EntityType="FYPNFCWineSystemModel.Store.ActiveWine" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Group" EntityType="FYPNFCWineSystemModel.Store.Group" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="InactiveWine" EntityType="FYPNFCWineSystemModel.Store.InactiveWine" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Project" EntityType="FYPNFCWineSystemModel.Store.Project" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProjectStatus" EntityType="FYPNFCWineSystemModel.Store.ProjectStatus" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Rejection" EntityType="FYPNFCWineSystemModel.Store.Rejection" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SupplyChain" EntityType="FYPNFCWineSystemModel.Store.SupplyChain" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TagUpdateTransaction" EntityType="FYPNFCWineSystemModel.Store.TagUpdateTransaction" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TagValueAchieve" EntityType="FYPNFCWineSystemModel.Store.TagValueAchieve" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TrustStatus" EntityType="FYPNFCWineSystemModel.Store.TrustStatus" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WineCategory" EntityType="FYPNFCWineSystemModel.Store.WineCategory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WineStatus" EntityType="FYPNFCWineSystemModel.Store.WineStatus" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_ActiveWine_Project" Association="FYPNFCWineSystemModel.Store.FK_ActiveWine_Project">
+            <End Role="Project" EntitySet="Project" />
+            <End Role="ActiveWine" EntitySet="ActiveWine" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActiveWine_Rejection" Association="FYPNFCWineSystemModel.Store.FK_ActiveWine_Rejection">
+            <End Role="Rejection" EntitySet="Rejection" />
+            <End Role="ActiveWine" EntitySet="ActiveWine" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActiveWine_WineCategory" Association="FYPNFCWineSystemModel.Store.FK_ActiveWine_WineCategory">
+            <End Role="WineCategory" EntitySet="WineCategory" />
+            <End Role="ActiveWine" EntitySet="ActiveWine" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActiveWine_WineStatus" Association="FYPNFCWineSystemModel.Store.FK_ActiveWine_WineStatus">
+            <End Role="WineStatus" EntitySet="WineStatus" />
+            <End Role="ActiveWine" EntitySet="ActiveWine" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InactiveWine_ActiveWine" Association="FYPNFCWineSystemModel.Store.FK_InactiveWine_ActiveWine">
+            <End Role="ActiveWine" EntitySet="ActiveWine" />
+            <End Role="InactiveWine" EntitySet="InactiveWine" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InactiveWine_Rejection" Association="FYPNFCWineSystemModel.Store.FK_InactiveWine_Rejection">
+            <End Role="Rejection" EntitySet="Rejection" />
+            <End Role="InactiveWine" EntitySet="InactiveWine" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InactiveWine_WineCategory" Association="FYPNFCWineSystemModel.Store.FK_InactiveWine_WineCategory">
+            <End Role="WineCategory" EntitySet="WineCategory" />
+            <End Role="InactiveWine" EntitySet="InactiveWine" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InactiveWine_WineStatus" Association="FYPNFCWineSystemModel.Store.FK_InactiveWine_WineStatus">
+            <End Role="WineStatus" EntitySet="WineStatus" />
+            <End Role="InactiveWine" EntitySet="InactiveWine" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Project_Group" Association="FYPNFCWineSystemModel.Store.FK_Project_Group">
+            <End Role="Group" EntitySet="Group" />
+            <End Role="Project" EntitySet="Project" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Project_ProjectStatus" Association="FYPNFCWineSystemModel.Store.FK_Project_ProjectStatus">
+            <End Role="ProjectStatus" EntitySet="ProjectStatus" />
+            <End Role="Project" EntitySet="Project" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Project_SupplyChain" Association="FYPNFCWineSystemModel.Store.FK_Project_SupplyChain">
+            <End Role="SupplyChain" EntitySet="SupplyChain" />
+            <End Role="Project" EntitySet="Project" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplyChain_ActiveWine" Association="FYPNFCWineSystemModel.Store.FK_SupplyChain_ActiveWine">
+            <End Role="ActiveWine" EntitySet="ActiveWine" />
+            <End Role="SupplyChain" EntitySet="SupplyChain" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplyChain_Group" Association="FYPNFCWineSystemModel.Store.FK_SupplyChain_Group">
+            <End Role="Group" EntitySet="Group" />
+            <End Role="SupplyChain" EntitySet="SupplyChain" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplyChain_TrustStatus" Association="FYPNFCWineSystemModel.Store.FK_SupplyChain_TrustStatus">
+            <End Role="TrustStatus" EntitySet="TrustStatus" />
+            <End Role="SupplyChain" EntitySet="SupplyChain" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Table_ToTable" Association="FYPNFCWineSystemModel.Store.FK_Table_ToTable">
+            <End Role="ActiveWine" EntitySet="ActiveWine" />
+            <End Role="TagValueAchieve" EntitySet="TagValueAchieve" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagUpdateTransaction_ToTable" Association="FYPNFCWineSystemModel.Store.FK_TagUpdateTransaction_ToTable">
+            <End Role="ActiveWine" EntitySet="ActiveWine" />
+            <End Role="TagUpdateTransaction" EntitySet="TagUpdateTransaction" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ActiveWine">
+          <Key>
+            <PropertyRef Name="WID" />
+          </Key>
+          <Property Name="WID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="WineCategoryID" Type="int" Nullable="false" />
+          <Property Name="WineTitle" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="WineStatusID" Type="int" Nullable="false" />
+          <Property Name="WineDescription" Type="ntext" />
+          <Property Name="Vintage" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="LastTransDate" Type="date" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" />
+          <Property Name="Discount" Type="float" Nullable="false" />
+          <Property Name="Country" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Region" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ProjectID" Type="int" />
+          <Property Name="Price" Type="int" Nullable="false" />
+          <Property Name="LastSupplyChain" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="TagID" Type="varchar" MaxLength="50" />
+          <Property Name="Producer" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="WinePic" Type="varchar" MaxLength="50" />
+          <Property Name="WineTransactionHistory" Type="ntext" />
+          <Property Name="DateOfProduction" Type="date" Nullable="false" />
+          <Property Name="RejectionID" Type="int" />
+          <Property Name="RejectionDate" Type="date" />
+          <Property Name="TagStatusID" Type="int" Nullable="false" />
+          <Property Name="readCount" Type="int" />
+          <Property Name="NFCCurrentTag" Type="varchar" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="GroupID" />
+          </Key>
+          <Property Name="GroupID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="GroupName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="InactiveWine">
+          <Key>
+            <PropertyRef Name="WID" />
+          </Key>
+          <Property Name="WID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="WineCategoryID" Type="int" Nullable="false" />
+          <Property Name="WineTitle" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="WineStatusID" Type="int" Nullable="false" />
+          <Property Name="WineDescription" Type="ntext" />
+          <Property Name="Vintage" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="LastTransDate" Type="date" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" />
+          <Property Name="Discount" Type="float" Nullable="false" />
+          <Property Name="Country" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Region" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ProjectID" Type="int" />
+          <Property Name="Price" Type="int" Nullable="false" />
+          <Property Name="LastSupplyChain" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="TagID" Type="int" />
+          <Property Name="Producer" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="WinePic" Type="varbinary(max)" />
+          <Property Name="WineTransactionHistory" Type="ntext" />
+          <Property Name="DateOfProduction" Type="date" Nullable="false" />
+          <Property Name="RejectionID" Type="int" />
+          <Property Name="RejectionDate" Type="date" />
+        </EntityType>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="ProjectID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="WID" Type="int" />
+          <Property Name="SupplyID" Type="int" />
+          <Property Name="GroupID" Type="int" />
+          <Property Name="ProjectDescription" Type="ntext" />
+          <Property Name="ProjectStartDate" Type="date" Nullable="false" />
+          <Property Name="ProjectEndDate" Type="date" />
+          <Property Name="ProjectStatusID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProjectStatus">
+          <Key>
+            <PropertyRef Name="ProjectStatusID" />
+          </Key>
+          <Property Name="ProjectStatusID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectStatusName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Rejection">
+          <Key>
+            <PropertyRef Name="RejectionID" />
+          </Key>
+          <Property Name="RejectionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RejectionReason" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SupplyChain">
+          <Key>
+            <PropertyRef Name="SupplyID" />
+          </Key>
+          <Property Name="SupplyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Address" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="PartnerName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Phone" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="GroupID" Type="int" />
+          <Property Name="Email" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="MarketValue" Type="int" Nullable="false" />
+          <Property Name="Nationality" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="PastTransactionSummary" Type="ntext" />
+          <Property Name="username" Type="varchar" MaxLength="50" />
+          <Property Name="contactPic" Type="varchar" MaxLength="50" />
+          <Property Name="TrustStatusID" Type="int" Nullable="false" />
+          <Property Name="DateOfEstablishment" Type="date" Nullable="false" />
+          <Property Name="WID" Type="int" />
+          <Property Name="CompanySize" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TagUpdateTransaction">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="old_tag_value" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="new_tag_value" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="wine_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TagValueAchieve">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="tag_value" Type="varchar" Nullable="false" MaxLength="32" />
+          <Property Name="wine_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TrustStatus">
+          <Key>
+            <PropertyRef Name="TrustStatusID" />
+          </Key>
+          <Property Name="TrustStatusID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TrustStatusName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="WineCategory">
+          <Key>
+            <PropertyRef Name="WineCategoryID" />
+          </Key>
+          <Property Name="WineCategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="WineCategoryName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="WineStatus">
+          <Key>
+            <PropertyRef Name="WineStatusID" />
+          </Key>
+          <Property Name="WineStatusID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="WineStatusName" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <Association Name="FK_ActiveWine_Project">
+          <End Role="Project" Type="FYPNFCWineSystemModel.Store.Project" Multiplicity="0..1" />
+          <End Role="ActiveWine" Type="FYPNFCWineSystemModel.Store.ActiveWine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="ActiveWine">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActiveWine_Rejection">
+          <End Role="Rejection" Type="FYPNFCWineSystemModel.Store.Rejection" Multiplicity="0..1" />
+          <End Role="ActiveWine" Type="FYPNFCWineSystemModel.Store.ActiveWine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rejection">
+              <PropertyRef Name="RejectionID" />
+            </Principal>
+            <Dependent Role="ActiveWine">
+              <PropertyRef Name="RejectionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActiveWine_WineCategory">
+          <End Role="WineCategory" Type="FYPNFCWineSystemModel.Store.WineCategory" Multiplicity="1" />
+          <End Role="ActiveWine" Type="FYPNFCWineSystemModel.Store.ActiveWine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WineCategory">
+              <PropertyRef Name="WineCategoryID" />
+            </Principal>
+            <Dependent Role="ActiveWine">
+              <PropertyRef Name="WineCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActiveWine_WineStatus">
+          <End Role="WineStatus" Type="FYPNFCWineSystemModel.Store.WineStatus" Multiplicity="1" />
+          <End Role="ActiveWine" Type="FYPNFCWineSystemModel.Store.ActiveWine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WineStatus">
+              <PropertyRef Name="WineStatusID" />
+            </Principal>
+            <Dependent Role="ActiveWine">
+              <PropertyRef Name="WineStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InactiveWine_ActiveWine">
+          <End Role="ActiveWine" Type="FYPNFCWineSystemModel.Store.ActiveWine" Multiplicity="1" />
+          <End Role="InactiveWine" Type="FYPNFCWineSystemModel.Store.InactiveWine" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ActiveWine">
+              <PropertyRef Name="WID" />
+            </Principal>
+            <Dependent Role="InactiveWine">
+              <PropertyRef Name="WID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InactiveWine_Rejection">
+          <End Role="Rejection" Type="FYPNFCWineSystemModel.Store.Rejection" Multiplicity="0..1" />
+          <End Role="InactiveWine" Type="FYPNFCWineSystemModel.Store.InactiveWine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rejection">
+              <PropertyRef Name="RejectionID" />
+            </Principal>
+            <Dependent Role="InactiveWine">
+              <PropertyRef Name="RejectionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InactiveWine_WineCategory">
+          <End Role="WineCategory" Type="FYPNFCWineSystemModel.Store.WineCategory" Multiplicity="1" />
+          <End Role="InactiveWine" Type="FYPNFCWineSystemModel.Store.InactiveWine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WineCategory">
+              <PropertyRef Name="WineCategoryID" />
+            </Principal>
+            <Dependent Role="InactiveWine">
+              <PropertyRef Name="WineCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InactiveWine_WineStatus">
+          <End Role="WineStatus" Type="FYPNFCWineSystemModel.Store.WineStatus" Multiplicity="1" />
+          <End Role="InactiveWine" Type="FYPNFCWineSystemModel.Store.InactiveWine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WineStatus">
+              <PropertyRef Name="WineStatusID" />
+            </Principal>
+            <Dependent Role="InactiveWine">
+              <PropertyRef Name="WineStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Project_Group">
+          <End Role="Group" Type="FYPNFCWineSystemModel.Store.Group" Multiplicity="0..1" />
+          <End Role="Project" Type="FYPNFCWineSystemModel.Store.Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="GroupID" />
+            </Principal>
+            <Dependent Role="Project">
+              <PropertyRef Name="GroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Project_ProjectStatus">
+          <End Role="ProjectStatus" Type="FYPNFCWineSystemModel.Store.ProjectStatus" Multiplicity="1" />
+          <End Role="Project" Type="FYPNFCWineSystemModel.Store.Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectStatus">
+              <PropertyRef Name="ProjectStatusID" />
+            </Principal>
+            <Dependent Role="Project">
+              <PropertyRef Name="ProjectStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Project_SupplyChain">
+          <End Role="SupplyChain" Type="FYPNFCWineSystemModel.Store.SupplyChain" Multiplicity="0..1" />
+          <End Role="Project" Type="FYPNFCWineSystemModel.Store.Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SupplyChain">
+              <PropertyRef Name="SupplyID" />
+            </Principal>
+            <Dependent Role="Project">
+              <PropertyRef Name="SupplyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplyChain_ActiveWine">
+          <End Role="ActiveWine" Type="FYPNFCWineSystemModel.Store.ActiveWine" Multiplicity="0..1" />
+          <End Role="SupplyChain" Type="FYPNFCWineSystemModel.Store.SupplyChain" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ActiveWine">
+              <PropertyRef Name="WID" />
+            </Principal>
+            <Dependent Role="SupplyChain">
+              <PropertyRef Name="WID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplyChain_Group">
+          <End Role="Group" Type="FYPNFCWineSystemModel.Store.Group" Multiplicity="0..1" />
+          <End Role="SupplyChain" Type="FYPNFCWineSystemModel.Store.SupplyChain" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="GroupID" />
+            </Principal>
+            <Dependent Role="SupplyChain">
+              <PropertyRef Name="GroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplyChain_TrustStatus">
+          <End Role="TrustStatus" Type="FYPNFCWineSystemModel.Store.TrustStatus" Multiplicity="1" />
+          <End Role="SupplyChain" Type="FYPNFCWineSystemModel.Store.SupplyChain" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TrustStatus">
+              <PropertyRef Name="TrustStatusID" />
+            </Principal>
+            <Dependent Role="SupplyChain">
+              <PropertyRef Name="TrustStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Table_ToTable">
+          <End Role="ActiveWine" Type="FYPNFCWineSystemModel.Store.ActiveWine" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TagValueAchieve" Type="FYPNFCWineSystemModel.Store.TagValueAchieve" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ActiveWine">
+              <PropertyRef Name="WID" />
+            </Principal>
+            <Dependent Role="TagValueAchieve">
+              <PropertyRef Name="wine_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagUpdateTransaction_ToTable">
+          <End Role="ActiveWine" Type="FYPNFCWineSystemModel.Store.ActiveWine" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TagUpdateTransaction" Type="FYPNFCWineSystemModel.Store.TagUpdateTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ActiveWine">
+              <PropertyRef Name="WID" />
+            </Principal>
+            <Dependent Role="TagUpdateTransaction">
+              <PropertyRef Name="wine_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FYPNFCWineSystemModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="FYPNFCWineSystemEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="ActiveWines" EntityType="FYPNFCWineSystemModel.ActiveWine" />
+          <EntitySet Name="Groups" EntityType="FYPNFCWineSystemModel.Group" />
+          <EntitySet Name="InactiveWines" EntityType="FYPNFCWineSystemModel.InactiveWine" />
+          <EntitySet Name="Projects" EntityType="FYPNFCWineSystemModel.Project" />
+          <EntitySet Name="ProjectStatus" EntityType="FYPNFCWineSystemModel.ProjectStatu" />
+          <EntitySet Name="Rejections" EntityType="FYPNFCWineSystemModel.Rejection" />
+          <EntitySet Name="SupplyChains" EntityType="FYPNFCWineSystemModel.SupplyChain" />
+          <EntitySet Name="TrustStatus" EntityType="FYPNFCWineSystemModel.TrustStatu" />
+          <EntitySet Name="WineCategories" EntityType="FYPNFCWineSystemModel.WineCategory" />
+          <EntitySet Name="WineStatus" EntityType="FYPNFCWineSystemModel.WineStatu" />
+          <AssociationSet Name="FK_ActiveWine_Project" Association="FYPNFCWineSystemModel.FK_ActiveWine_Project">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="ActiveWine" EntitySet="ActiveWines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActiveWine_Rejection" Association="FYPNFCWineSystemModel.FK_ActiveWine_Rejection">
+            <End Role="Rejection" EntitySet="Rejections" />
+            <End Role="ActiveWine" EntitySet="ActiveWines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActiveWine_WineCategory" Association="FYPNFCWineSystemModel.FK_ActiveWine_WineCategory">
+            <End Role="WineCategory" EntitySet="WineCategories" />
+            <End Role="ActiveWine" EntitySet="ActiveWines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActiveWine_WineStatus" Association="FYPNFCWineSystemModel.FK_ActiveWine_WineStatus">
+            <End Role="WineStatus" EntitySet="WineStatus" />
+            <End Role="ActiveWine" EntitySet="ActiveWines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InactiveWine_ActiveWine" Association="FYPNFCWineSystemModel.FK_InactiveWine_ActiveWine">
+            <End Role="ActiveWine" EntitySet="ActiveWines" />
+            <End Role="InactiveWine" EntitySet="InactiveWines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplyChain_ActiveWine" Association="FYPNFCWineSystemModel.FK_SupplyChain_ActiveWine">
+            <End Role="ActiveWine" EntitySet="ActiveWines" />
+            <End Role="SupplyChain" EntitySet="SupplyChains" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Project_Group" Association="FYPNFCWineSystemModel.FK_Project_Group">
+            <End Role="Group" EntitySet="Groups" />
+            <End Role="Project" EntitySet="Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplyChain_Group" Association="FYPNFCWineSystemModel.FK_SupplyChain_Group">
+            <End Role="Group" EntitySet="Groups" />
+            <End Role="SupplyChain" EntitySet="SupplyChains" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InactiveWine_Rejection" Association="FYPNFCWineSystemModel.FK_InactiveWine_Rejection">
+            <End Role="Rejection" EntitySet="Rejections" />
+            <End Role="InactiveWine" EntitySet="InactiveWines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InactiveWine_WineCategory" Association="FYPNFCWineSystemModel.FK_InactiveWine_WineCategory">
+            <End Role="WineCategory" EntitySet="WineCategories" />
+            <End Role="InactiveWine" EntitySet="InactiveWines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InactiveWine_WineStatus" Association="FYPNFCWineSystemModel.FK_InactiveWine_WineStatus">
+            <End Role="WineStatus" EntitySet="WineStatus" />
+            <End Role="InactiveWine" EntitySet="InactiveWines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Project_ProjectStatus" Association="FYPNFCWineSystemModel.FK_Project_ProjectStatus">
+            <End Role="ProjectStatus" EntitySet="ProjectStatus" />
+            <End Role="Project" EntitySet="Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Project_SupplyChain" Association="FYPNFCWineSystemModel.FK_Project_SupplyChain">
+            <End Role="SupplyChain" EntitySet="SupplyChains" />
+            <End Role="Project" EntitySet="Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplyChain_TrustStatus" Association="FYPNFCWineSystemModel.FK_SupplyChain_TrustStatus">
+            <End Role="TrustStatus" EntitySet="TrustStatus" />
+            <End Role="SupplyChain" EntitySet="SupplyChains" />
+          </AssociationSet>
+          <EntitySet Name="TagUpdateTransaction" EntityType="FYPNFCWineSystemModel.TagUpdateTransaction" />
+          <EntitySet Name="TagValueAchieve" EntityType="FYPNFCWineSystemModel.TagValueAchieve" />
+          <AssociationSet Name="FK_Table_ToTable" Association="FYPNFCWineSystemModel.FK_Table_ToTable">
+            <End Role="ActiveWine" EntitySet="ActiveWines" />
+            <End Role="TagValueAchieve" EntitySet="TagValueAchieve" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagUpdateTransaction_ToTable" Association="FYPNFCWineSystemModel.FK_TagUpdateTransaction_ToTable">
+            <End Role="ActiveWine" EntitySet="ActiveWines" />
+            <End Role="TagUpdateTransaction" EntitySet="TagUpdateTransaction" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ActiveWine">
+          <Key>
+            <PropertyRef Name="WID" />
+          </Key>
+          <Property Name="WID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="WineCategoryID" Type="Int32" Nullable="false" />
+          <Property Name="WineTitle" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="WineStatusID" Type="Int32" Nullable="false" />
+          <Property Name="WineDescription" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Vintage" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastTransDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="username" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Discount" Type="Double" Nullable="false" />
+          <Property Name="Country" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Region" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ProjectID" Type="Int32" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <Property Name="LastSupplyChain" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="TagID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Producer" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="WinePic" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="WineTransactionHistory" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="DateOfProduction" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="RejectionID" Type="Int32" />
+          <Property Name="RejectionDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Project" Relationship="FYPNFCWineSystemModel.FK_ActiveWine_Project" FromRole="ActiveWine" ToRole="Project" />
+          <NavigationProperty Name="Rejection" Relationship="FYPNFCWineSystemModel.FK_ActiveWine_Rejection" FromRole="ActiveWine" ToRole="Rejection" />
+          <NavigationProperty Name="WineCategory" Relationship="FYPNFCWineSystemModel.FK_ActiveWine_WineCategory" FromRole="ActiveWine" ToRole="WineCategory" />
+          <NavigationProperty Name="WineStatu" Relationship="FYPNFCWineSystemModel.FK_ActiveWine_WineStatus" FromRole="ActiveWine" ToRole="WineStatus" />
+          <NavigationProperty Name="InactiveWine" Relationship="FYPNFCWineSystemModel.FK_InactiveWine_ActiveWine" FromRole="ActiveWine" ToRole="InactiveWine" />
+          <NavigationProperty Name="SupplyChains" Relationship="FYPNFCWineSystemModel.FK_SupplyChain_ActiveWine" FromRole="ActiveWine" ToRole="SupplyChain" />
+          <Property Type="Int32" Name="TagStatusID" Nullable="false" />
+          <Property Type="Int32" Name="readCount" />
+          <Property Type="String" Name="NFCCurrentTag" MaxLength="32" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TagValueAchieve" Relationship="FYPNFCWineSystemModel.FK_Table_ToTable" FromRole="ActiveWine" ToRole="TagValueAchieve" />
+          <NavigationProperty Name="TagUpdateTransaction" Relationship="FYPNFCWineSystemModel.FK_TagUpdateTransaction_ToTable" FromRole="ActiveWine" ToRole="TagUpdateTransaction" />
+        </EntityType>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="GroupID" />
+          </Key>
+          <Property Name="GroupID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="GroupName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Projects" Relationship="FYPNFCWineSystemModel.FK_Project_Group" FromRole="Group" ToRole="Project" />
+          <NavigationProperty Name="SupplyChains" Relationship="FYPNFCWineSystemModel.FK_SupplyChain_Group" FromRole="Group" ToRole="SupplyChain" />
+        </EntityType>
+        <EntityType Name="InactiveWine">
+          <Key>
+            <PropertyRef Name="WID" />
+          </Key>
+          <Property Name="WID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="WineCategoryID" Type="Int32" Nullable="false" />
+          <Property Name="WineTitle" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="WineStatusID" Type="Int32" Nullable="false" />
+          <Property Name="WineDescription" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Vintage" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastTransDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="username" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Discount" Type="Double" Nullable="false" />
+          <Property Name="Country" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Region" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ProjectID" Type="Int32" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <Property Name="LastSupplyChain" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="TagID" Type="Int32" />
+          <Property Name="Producer" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="WinePic" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="WineTransactionHistory" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="DateOfProduction" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="RejectionID" Type="Int32" />
+          <Property Name="RejectionDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="ActiveWine" Relationship="FYPNFCWineSystemModel.FK_InactiveWine_ActiveWine" FromRole="InactiveWine" ToRole="ActiveWine" />
+          <NavigationProperty Name="Rejection" Relationship="FYPNFCWineSystemModel.FK_InactiveWine_Rejection" FromRole="InactiveWine" ToRole="Rejection" />
+          <NavigationProperty Name="WineCategory" Relationship="FYPNFCWineSystemModel.FK_InactiveWine_WineCategory" FromRole="InactiveWine" ToRole="WineCategory" />
+          <NavigationProperty Name="WineStatu" Relationship="FYPNFCWineSystemModel.FK_InactiveWine_WineStatus" FromRole="InactiveWine" ToRole="WineStatus" />
+        </EntityType>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="ProjectID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="WID" Type="Int32" />
+          <Property Name="SupplyID" Type="Int32" />
+          <Property Name="GroupID" Type="Int32" />
+          <Property Name="ProjectDescription" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ProjectStartDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ProjectEndDate" Type="DateTime" Precision="0" />
+          <Property Name="ProjectStatusID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ActiveWines" Relationship="FYPNFCWineSystemModel.FK_ActiveWine_Project" FromRole="Project" ToRole="ActiveWine" />
+          <NavigationProperty Name="Group" Relationship="FYPNFCWineSystemModel.FK_Project_Group" FromRole="Project" ToRole="Group" />
+          <NavigationProperty Name="ProjectStatu" Relationship="FYPNFCWineSystemModel.FK_Project_ProjectStatus" FromRole="Project" ToRole="ProjectStatus" />
+          <NavigationProperty Name="SupplyChain" Relationship="FYPNFCWineSystemModel.FK_Project_SupplyChain" FromRole="Project" ToRole="SupplyChain" />
+        </EntityType>
+        <EntityType Name="ProjectStatu">
+          <Key>
+            <PropertyRef Name="ProjectStatusID" />
+          </Key>
+          <Property Name="ProjectStatusID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectStatusName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Projects" Relationship="FYPNFCWineSystemModel.FK_Project_ProjectStatus" FromRole="ProjectStatus" ToRole="Project" />
+        </EntityType>
+        <EntityType Name="Rejection">
+          <Key>
+            <PropertyRef Name="RejectionID" />
+          </Key>
+          <Property Name="RejectionID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="RejectionReason" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ActiveWines" Relationship="FYPNFCWineSystemModel.FK_ActiveWine_Rejection" FromRole="Rejection" ToRole="ActiveWine" />
+          <NavigationProperty Name="InactiveWines" Relationship="FYPNFCWineSystemModel.FK_InactiveWine_Rejection" FromRole="Rejection" ToRole="InactiveWine" />
+        </EntityType>
+        <EntityType Name="SupplyChain">
+          <Key>
+            <PropertyRef Name="SupplyID" />
+          </Key>
+          <Property Name="SupplyID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PartnerName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="GroupID" Type="Int32" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MarketValue" Type="Int32" Nullable="false" />
+          <Property Name="Nationality" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PastTransactionSummary" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="username" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="contactPic" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="TrustStatusID" Type="Int32" Nullable="false" />
+          <Property Name="DateOfEstablishment" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="WID" Type="Int32" />
+          <Property Name="CompanySize" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ActiveWine" Relationship="FYPNFCWineSystemModel.FK_SupplyChain_ActiveWine" FromRole="SupplyChain" ToRole="ActiveWine" />
+          <NavigationProperty Name="Group" Relationship="FYPNFCWineSystemModel.FK_SupplyChain_Group" FromRole="SupplyChain" ToRole="Group" />
+          <NavigationProperty Name="Projects" Relationship="FYPNFCWineSystemModel.FK_Project_SupplyChain" FromRole="SupplyChain" ToRole="Project" />
+          <NavigationProperty Name="TrustStatu" Relationship="FYPNFCWineSystemModel.FK_SupplyChain_TrustStatus" FromRole="SupplyChain" ToRole="TrustStatus" />
+        </EntityType>
+        <EntityType Name="TrustStatu">
+          <Key>
+            <PropertyRef Name="TrustStatusID" />
+          </Key>
+          <Property Name="TrustStatusID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="TrustStatusName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="SupplyChains" Relationship="FYPNFCWineSystemModel.FK_SupplyChain_TrustStatus" FromRole="TrustStatus" ToRole="SupplyChain" />
+        </EntityType>
+        <EntityType Name="WineCategory">
+          <Key>
+            <PropertyRef Name="WineCategoryID" />
+          </Key>
+          <Property Name="WineCategoryID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="WineCategoryName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ActiveWines" Relationship="FYPNFCWineSystemModel.FK_ActiveWine_WineCategory" FromRole="WineCategory" ToRole="ActiveWine" />
+          <NavigationProperty Name="InactiveWines" Relationship="FYPNFCWineSystemModel.FK_InactiveWine_WineCategory" FromRole="WineCategory" ToRole="InactiveWine" />
+        </EntityType>
+        <EntityType Name="WineStatu">
+          <Key>
+            <PropertyRef Name="WineStatusID" />
+          </Key>
+          <Property Name="WineStatusID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="WineStatusName" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <NavigationProperty Name="ActiveWines" Relationship="FYPNFCWineSystemModel.FK_ActiveWine_WineStatus" FromRole="WineStatus" ToRole="ActiveWine" />
+          <NavigationProperty Name="InactiveWines" Relationship="FYPNFCWineSystemModel.FK_InactiveWine_WineStatus" FromRole="WineStatus" ToRole="InactiveWine" />
+        </EntityType>
+        <Association Name="FK_ActiveWine_Project">
+          <End Role="Project" Type="FYPNFCWineSystemModel.Project" Multiplicity="0..1" />
+          <End Role="ActiveWine" Type="FYPNFCWineSystemModel.ActiveWine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="ActiveWine">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActiveWine_Rejection">
+          <End Role="Rejection" Type="FYPNFCWineSystemModel.Rejection" Multiplicity="0..1" />
+          <End Role="ActiveWine" Type="FYPNFCWineSystemModel.ActiveWine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rejection">
+              <PropertyRef Name="RejectionID" />
+            </Principal>
+            <Dependent Role="ActiveWine">
+              <PropertyRef Name="RejectionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActiveWine_WineCategory">
+          <End Role="WineCategory" Type="FYPNFCWineSystemModel.WineCategory" Multiplicity="1" />
+          <End Role="ActiveWine" Type="FYPNFCWineSystemModel.ActiveWine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WineCategory">
+              <PropertyRef Name="WineCategoryID" />
+            </Principal>
+            <Dependent Role="ActiveWine">
+              <PropertyRef Name="WineCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActiveWine_WineStatus">
+          <End Role="WineStatus" Type="FYPNFCWineSystemModel.WineStatu" Multiplicity="1" />
+          <End Role="ActiveWine" Type="FYPNFCWineSystemModel.ActiveWine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WineStatus">
+              <PropertyRef Name="WineStatusID" />
+            </Principal>
+            <Dependent Role="ActiveWine">
+              <PropertyRef Name="WineStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InactiveWine_ActiveWine">
+          <End Role="ActiveWine" Type="FYPNFCWineSystemModel.ActiveWine" Multiplicity="1" />
+          <End Role="InactiveWine" Type="FYPNFCWineSystemModel.InactiveWine" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ActiveWine">
+              <PropertyRef Name="WID" />
+            </Principal>
+            <Dependent Role="InactiveWine">
+              <PropertyRef Name="WID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplyChain_ActiveWine">
+          <End Role="ActiveWine" Type="FYPNFCWineSystemModel.ActiveWine" Multiplicity="0..1" />
+          <End Role="SupplyChain" Type="FYPNFCWineSystemModel.SupplyChain" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ActiveWine">
+              <PropertyRef Name="WID" />
+            </Principal>
+            <Dependent Role="SupplyChain">
+              <PropertyRef Name="WID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Project_Group">
+          <End Role="Group" Type="FYPNFCWineSystemModel.Group" Multiplicity="0..1" />
+          <End Role="Project" Type="FYPNFCWineSystemModel.Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="GroupID" />
+            </Principal>
+            <Dependent Role="Project">
+              <PropertyRef Name="GroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplyChain_Group">
+          <End Role="Group" Type="FYPNFCWineSystemModel.Group" Multiplicity="0..1" />
+          <End Role="SupplyChain" Type="FYPNFCWineSystemModel.SupplyChain" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="GroupID" />
+            </Principal>
+            <Dependent Role="SupplyChain">
+              <PropertyRef Name="GroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InactiveWine_Rejection">
+          <End Role="Rejection" Type="FYPNFCWineSystemModel.Rejection" Multiplicity="0..1" />
+          <End Role="InactiveWine" Type="FYPNFCWineSystemModel.InactiveWine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rejection">
+              <PropertyRef Name="RejectionID" />
+            </Principal>
+            <Dependent Role="InactiveWine">
+              <PropertyRef Name="RejectionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InactiveWine_WineCategory">
+          <End Role="WineCategory" Type="FYPNFCWineSystemModel.WineCategory" Multiplicity="1" />
+          <End Role="InactiveWine" Type="FYPNFCWineSystemModel.InactiveWine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WineCategory">
+              <PropertyRef Name="WineCategoryID" />
+            </Principal>
+            <Dependent Role="InactiveWine">
+              <PropertyRef Name="WineCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InactiveWine_WineStatus">
+          <End Role="WineStatus" Type="FYPNFCWineSystemModel.WineStatu" Multiplicity="1" />
+          <End Role="InactiveWine" Type="FYPNFCWineSystemModel.InactiveWine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WineStatus">
+              <PropertyRef Name="WineStatusID" />
+            </Principal>
+            <Dependent Role="InactiveWine">
+              <PropertyRef Name="WineStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Project_ProjectStatus">
+          <End Role="ProjectStatus" Type="FYPNFCWineSystemModel.ProjectStatu" Multiplicity="1" />
+          <End Role="Project" Type="FYPNFCWineSystemModel.Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectStatus">
+              <PropertyRef Name="ProjectStatusID" />
+            </Principal>
+            <Dependent Role="Project">
+              <PropertyRef Name="ProjectStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Project_SupplyChain">
+          <End Role="SupplyChain" Type="FYPNFCWineSystemModel.SupplyChain" Multiplicity="0..1" />
+          <End Role="Project" Type="FYPNFCWineSystemModel.Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SupplyChain">
+              <PropertyRef Name="SupplyID" />
+            </Principal>
+            <Dependent Role="Project">
+              <PropertyRef Name="SupplyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplyChain_TrustStatus">
+          <End Role="TrustStatus" Type="FYPNFCWineSystemModel.TrustStatu" Multiplicity="1" />
+          <End Role="SupplyChain" Type="FYPNFCWineSystemModel.SupplyChain" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TrustStatus">
+              <PropertyRef Name="TrustStatusID" />
+            </Principal>
+            <Dependent Role="SupplyChain">
+              <PropertyRef Name="TrustStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TagUpdateTransaction">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="old_tag_value" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="new_tag_value" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="wine_id" Nullable="false" />
+          <NavigationProperty Name="ActiveWine" Relationship="FYPNFCWineSystemModel.FK_TagUpdateTransaction_ToTable" FromRole="TagUpdateTransaction" ToRole="ActiveWine" />
+        </EntityType>
+        <EntityType Name="TagValueAchieve">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="tag_value" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="wine_id" Nullable="false" />
+          <NavigationProperty Name="ActiveWine" Relationship="FYPNFCWineSystemModel.FK_Table_ToTable" FromRole="TagValueAchieve" ToRole="ActiveWine" />
+        </EntityType>
+        <Association Name="FK_Table_ToTable">
+          <End Type="FYPNFCWineSystemModel.ActiveWine" Role="ActiveWine" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="FYPNFCWineSystemModel.TagValueAchieve" Role="TagValueAchieve" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ActiveWine">
+              <PropertyRef Name="WID" />
+            </Principal>
+            <Dependent Role="TagValueAchieve">
+              <PropertyRef Name="wine_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagUpdateTransaction_ToTable">
+          <End Type="FYPNFCWineSystemModel.ActiveWine" Role="ActiveWine" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="FYPNFCWineSystemModel.TagUpdateTransaction" Role="TagUpdateTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ActiveWine">
+              <PropertyRef Name="WID" />
+            </Principal>
+            <Dependent Role="TagUpdateTransaction">
+              <PropertyRef Name="wine_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FYPNFCWineSystemModelStoreContainer" CdmEntityContainer="FYPNFCWineSystemEntities">
+          <EntitySetMapping Name="ActiveWines">
+            <EntityTypeMapping TypeName="FYPNFCWineSystemModel.ActiveWine">
+              <MappingFragment StoreEntitySet="ActiveWine">
+                <ScalarProperty Name="NFCCurrentTag" ColumnName="NFCCurrentTag" />
+                <ScalarProperty Name="readCount" ColumnName="readCount" />
+                <ScalarProperty Name="TagStatusID" ColumnName="TagStatusID" />
+                <ScalarProperty Name="WID" ColumnName="WID" />
+                <ScalarProperty Name="WineCategoryID" ColumnName="WineCategoryID" />
+                <ScalarProperty Name="WineTitle" ColumnName="WineTitle" />
+                <ScalarProperty Name="WineStatusID" ColumnName="WineStatusID" />
+                <ScalarProperty Name="WineDescription" ColumnName="WineDescription" />
+                <ScalarProperty Name="Vintage" ColumnName="Vintage" />
+                <ScalarProperty Name="LastTransDate" ColumnName="LastTransDate" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="LastSupplyChain" ColumnName="LastSupplyChain" />
+                <ScalarProperty Name="TagID" ColumnName="TagID" />
+                <ScalarProperty Name="Producer" ColumnName="Producer" />
+                <ScalarProperty Name="WinePic" ColumnName="WinePic" />
+                <ScalarProperty Name="WineTransactionHistory" ColumnName="WineTransactionHistory" />
+                <ScalarProperty Name="DateOfProduction" ColumnName="DateOfProduction" />
+                <ScalarProperty Name="RejectionID" ColumnName="RejectionID" />
+                <ScalarProperty Name="RejectionDate" ColumnName="RejectionDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Groups">
+            <EntityTypeMapping TypeName="FYPNFCWineSystemModel.Group">
+              <MappingFragment StoreEntitySet="Group">
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InactiveWines">
+            <EntityTypeMapping TypeName="FYPNFCWineSystemModel.InactiveWine">
+              <MappingFragment StoreEntitySet="InactiveWine">
+                <ScalarProperty Name="WID" ColumnName="WID" />
+                <ScalarProperty Name="WineCategoryID" ColumnName="WineCategoryID" />
+                <ScalarProperty Name="WineTitle" ColumnName="WineTitle" />
+                <ScalarProperty Name="WineStatusID" ColumnName="WineStatusID" />
+                <ScalarProperty Name="WineDescription" ColumnName="WineDescription" />
+                <ScalarProperty Name="Vintage" ColumnName="Vintage" />
+                <ScalarProperty Name="LastTransDate" ColumnName="LastTransDate" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="LastSupplyChain" ColumnName="LastSupplyChain" />
+                <ScalarProperty Name="TagID" ColumnName="TagID" />
+                <ScalarProperty Name="Producer" ColumnName="Producer" />
+                <ScalarProperty Name="WinePic" ColumnName="WinePic" />
+                <ScalarProperty Name="WineTransactionHistory" ColumnName="WineTransactionHistory" />
+                <ScalarProperty Name="DateOfProduction" ColumnName="DateOfProduction" />
+                <ScalarProperty Name="RejectionID" ColumnName="RejectionID" />
+                <ScalarProperty Name="RejectionDate" ColumnName="RejectionDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Projects">
+            <EntityTypeMapping TypeName="FYPNFCWineSystemModel.Project">
+              <MappingFragment StoreEntitySet="Project">
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+                <ScalarProperty Name="WID" ColumnName="WID" />
+                <ScalarProperty Name="SupplyID" ColumnName="SupplyID" />
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="ProjectDescription" ColumnName="ProjectDescription" />
+                <ScalarProperty Name="ProjectStartDate" ColumnName="ProjectStartDate" />
+                <ScalarProperty Name="ProjectEndDate" ColumnName="ProjectEndDate" />
+                <ScalarProperty Name="ProjectStatusID" ColumnName="ProjectStatusID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectStatus">
+            <EntityTypeMapping TypeName="FYPNFCWineSystemModel.ProjectStatu">
+              <MappingFragment StoreEntitySet="ProjectStatus">
+                <ScalarProperty Name="ProjectStatusID" ColumnName="ProjectStatusID" />
+                <ScalarProperty Name="ProjectStatusName" ColumnName="ProjectStatusName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rejections">
+            <EntityTypeMapping TypeName="FYPNFCWineSystemModel.Rejection">
+              <MappingFragment StoreEntitySet="Rejection">
+                <ScalarProperty Name="RejectionID" ColumnName="RejectionID" />
+                <ScalarProperty Name="RejectionReason" ColumnName="RejectionReason" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SupplyChains">
+            <EntityTypeMapping TypeName="FYPNFCWineSystemModel.SupplyChain">
+              <MappingFragment StoreEntitySet="SupplyChain">
+                <ScalarProperty Name="SupplyID" ColumnName="SupplyID" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PartnerName" ColumnName="PartnerName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MarketValue" ColumnName="MarketValue" />
+                <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+                <ScalarProperty Name="PastTransactionSummary" ColumnName="PastTransactionSummary" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="contactPic" ColumnName="contactPic" />
+                <ScalarProperty Name="TrustStatusID" ColumnName="TrustStatusID" />
+                <ScalarProperty Name="DateOfEstablishment" ColumnName="DateOfEstablishment" />
+                <ScalarProperty Name="WID" ColumnName="WID" />
+                <ScalarProperty Name="CompanySize" ColumnName="CompanySize" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TrustStatus">
+            <EntityTypeMapping TypeName="FYPNFCWineSystemModel.TrustStatu">
+              <MappingFragment StoreEntitySet="TrustStatus">
+                <ScalarProperty Name="TrustStatusID" ColumnName="TrustStatusID" />
+                <ScalarProperty Name="TrustStatusName" ColumnName="TrustStatusName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WineCategories">
+            <EntityTypeMapping TypeName="FYPNFCWineSystemModel.WineCategory">
+              <MappingFragment StoreEntitySet="WineCategory">
+                <ScalarProperty Name="WineCategoryID" ColumnName="WineCategoryID" />
+                <ScalarProperty Name="WineCategoryName" ColumnName="WineCategoryName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WineStatus">
+            <EntityTypeMapping TypeName="FYPNFCWineSystemModel.WineStatu">
+              <MappingFragment StoreEntitySet="WineStatus">
+                <ScalarProperty Name="WineStatusID" ColumnName="WineStatusID" />
+                <ScalarProperty Name="WineStatusName" ColumnName="WineStatusName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TagUpdateTransaction">
+            <EntityTypeMapping TypeName="FYPNFCWineSystemModel.TagUpdateTransaction">
+              <MappingFragment StoreEntitySet="TagUpdateTransaction">
+                <ScalarProperty Name="wine_id" ColumnName="wine_id" />
+                <ScalarProperty Name="new_tag_value" ColumnName="new_tag_value" />
+                <ScalarProperty Name="old_tag_value" ColumnName="old_tag_value" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TagValueAchieve">
+            <EntityTypeMapping TypeName="FYPNFCWineSystemModel.TagValueAchieve">
+              <MappingFragment StoreEntitySet="TagValueAchieve">
+                <ScalarProperty Name="wine_id" ColumnName="wine_id" />
+                <ScalarProperty Name="tag_value" ColumnName="tag_value" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

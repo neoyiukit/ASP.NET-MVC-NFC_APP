@@ -1,0 +1,125 @@
+﻿@model PagedList.IPagedList<FYPNFCWineSystem.Models.ActiveWine>
+
+@{
+    ViewBag.Title = "Your Invalid Wine";
+}
+
+<h2>Your Invalid Wine</h2>
+
+@using (Html.BeginForm())
+{
+    <p>
+    Search by Wine Name: @Html.TextBox("SearchString")
+    <input type="submit" value="Search" class="btn btn-primary"/></p>
+}
+
+<p>
+    @Html.ActionLink("Create New Invalid Wine", "Create",null, new { @class="btn btn-primary" })
+    @Html.ActionLink("Remove all Tag Archive", "purgeTagAchieve","ActiveWine",null, new { @class="btn btn-primary" })
+</p>
+
+ <hr size="3" align="center" noshade width="100%" color="#721818">
+
+<table class="table table-hover">
+     <tr>
+        <th><center>
+            @Html.ActionLink("Wine Name", "Index", new { sortOrder=ViewBag.NameSortParm, currentFilter=ViewBag.CurrentFilter })
+        </center></th>
+        <th><center>
+            @Html.ActionLink("Wine Category", "Index", new { sortOrder = ViewBag.CateSortParm, currentFilter = ViewBag.CurrentFilter })
+        </center></th>
+        <th><center>
+            @Html.ActionLink("Producer", "Index", new { sortOrder = ViewBag.producerSortParm, currentFilter = ViewBag.CurrentFilter })
+        </center></th>
+        <th><center>
+            @Html.ActionLink("Country", "Index", new { sortOrder = ViewBag.countrySortParm, currentFilter = ViewBag.CurrentFilter })
+        </center></th>
+        <th><center>
+            @Html.ActionLink("Vintage", "Index", new { sortOrder = ViewBag.vintageSortParm, currentFilter = ViewBag.CurrentFilter })
+        </center></th>
+         <th><center>
+          Reasons of Rejection
+        </center></th>
+        <th><center>
+            @Html.ActionLink("Date of Rejection", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+        </center></th>
+         <th><center>
+            Actions
+        </center></th>
+         <th><center>
+            Details
+        </center></th>
+         <th><center>
+            Tag Archive
+        </center></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr align="center">
+        <td>
+            @Html.DisplayFor(modelItem => item.WineTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WineCategory.WineCategoryName)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Producer)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Country)
+        </td>
+          <td>
+            @Html.DisplayFor(modelItem => item.Vintage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rejection.RejectionReason)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RejectionDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.WID}, new { @class="btn btn-default" })
+            @Html.ActionLink("Delete", "Delete", new { id=item.WID }, new { @class="btn btn-default" })
+        </td>
+        <td>
+            @Html.ActionLink("Click to view " + @Html.DisplayFor(modelItem => item.WineTitle ), "Details", new { id=item.WID }, new { @class="btn btn-default" })
+        </td>
+        <td>
+            @Html.ActionLink("view Archive", "WineTagAchieve","activeWine", new { id = item.WID }, new { @class="btn btn-default" })
+        </td>
+    </tr>
+}
+
+</table>
+<br>
+<br>
+<div>
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+    of @Model.PageCount
+     
+    @if (Model.HasPreviousPage)
+    {
+        @Html.ActionLink("<<", "Index", new { page = 1, currentFilter = ViewBag.CurrentFilter })
+        @Html.Raw(" ");
+        @Html.ActionLink("< Prev", "Index", new { page = Model.PageNumber - 1, currentFilter = ViewBag.CurrentFilter })
+    }
+    else
+    {
+        @:<<
+        @Html.Raw(" ");
+        @:< Prev
+    }
+     
+    @if (Model.HasNextPage)
+    {
+        @Html.ActionLink("Next >", "Index", new { page = Model.PageNumber + 1, currentFilter = ViewBag.CurrentFilter })
+        @Html.Raw(" ");
+        @Html.ActionLink(">>", "Index", new { page = Model.PageCount, currentFilter = ViewBag.CurrentFilter })
+    }
+    else
+    {
+        @:Next >
+        @Html.Raw(" ")
+        @:>>
+    }
+</div>

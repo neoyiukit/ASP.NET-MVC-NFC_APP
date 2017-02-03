@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+
+    <script src="@Url.Content("~/Scripts/jquery-1.7.1.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/responsive-calendar.js")" type="text/javascript"></script>
+
+    <link href="@Url.Content("~/Content/css/bootstrap.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/responsive-calendar.css")" rel="stylesheet" type="text/css" />
+    <style>
+        body {
+          padding-top: 50px;
+        }
+        .starter-template {
+          padding: 40px 15px;
+          text-align: center;
+        }
+
+        .brand
+            {
+              background: url(@Url.Content("~/Content/winelogo.jpg")) no-repeat left center;
+              background-size: 80px 60px;
+                padding-left: 95px;
+            }
+        .center {
+             float: none;
+             margin-left: auto;
+             margin-right: auto;
+        }
+
+        .navbar-inverse .navbar-nav > li > a{
+            color:white;
+            font-weight:bold;
+        }
+
+        .navbar-inverse .navbar-nav > li > a:hover{
+            color:#999;
+        }
+
+        body
+        {
+            background-position: center center;
+            background-color: #FFFFFF;
+            background-image: url('@Url.Content("~/Content/123456.jpg")');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .jumbotron{
+            background-color:transparent;
+        }
+
+        .btn-primary{
+            background-color: #601F1F;
+            border-color:#9E8694;
+        }
+
+        .btn-primary:hover{
+            background-color: #964545;
+            border-color:#9E8694;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+            @Html.ActionLink("Natural Wine Company", "Index", "Home", null, new { @class="navbar-brand brand" })
+        </div>
+        <ul class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+           <!-- <li class="active"><a href="#">Home</a></li> -->
+            <li>@Html.ActionLink("Home", "Index", "Home", null, new { @id = "Home" })</li>
+            <li>@Html.ActionLink("Your Active Wine", "Index", "ActiveWine", null, new { @id = "YourActiveWine" })</li>
+            <li>@Html.ActionLink("Your Inactive Wine", "Index", "InactiveWine", null, new { @id = "InactiveWine" })</li>
+            <li>@Html.ActionLink("Your Projects", "Index", "Project", null, new { @id = "YourProjects" })</li>
+            <li>@Html.ActionLink("Your Partners", "Index", "Supply", null, new { @id = "YourPartners" })</li>
+          </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>@Html.Partial("_LogOnPartial")</li>
+            </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+
+    <div class="jumbotron">
+      <div class="container">
+          <center>
+              <img src="http://i.imgur.com/4dYyiv6.jpg" class="center" border=0 />
+          </center>
+              
+        
+      </div>
+    </div>
+
+        <section id="main" style="background-color:white">
+            <div class="container">
+                @RenderBody()
+            </div>
+        </section>
+
+        <footer style="background-color:#eeeeee;">
+            <div class="container">
+
+            
+                <center><script language="JavaScript">            function MM_o(selObj) { window.open(selObj.options[selObj.selectedIndex].value); }</script>
+                 <select onChange="MM_o(this)"style="background:#ffffff; color:#721818">
+                 <option SELECTED value="">OTHER SITES</option>
+                 <option value="http://www.hku.hk/">HKU</option>
+                 <option value="http://www.imse.hku.hk//">IMSE</option>
+                 <option value="http://hk.yahoo.com/">YAHOO.HK</option>
+                 <option value="http://www.google.com.hk/">GOOGLE.HK</option></select></center>
+                <br>
+                <p align= "right">
+                <a href= "http://www.youtube.com/">
+                <img src="@Url.Content("~/Content/youtube.png")" border="0"  />
+                <a href= "http://twitter.com/">
+                <img src="@Url.Content("~/Content/twitter.png")" border="0"  />
+                <a href= "https://www.facebook.com/pages/Wecome-to-Of-Course/639872629385073?ref=profile">
+                <img src="@Url.Content("~/Content/facebook2.png")" border="0"  />
+                <a href= "http://www.skype.com/intl/zh-Hant/home">
+                <img src="@Url.Content("~/Content/skype.png")" border="0" />
+                </p>
+
+                <p align= "right">
+                    @Html.ActionLink("About Natural Wine Company", "About","Home",null,null) |
+                    @Html.ActionLink("Contact US", "Contact","Home",null,null) |
+                    @Html.ActionLink("Terms & Condition", "termsandcondition","Home",null,null)
+                </p>
+                <hr size="2" align="center" noshade width="100%" color="#721818">
+                <p><span onmouseover="this.style.fontSize='15px'" onmouseout="this.style.fontSize='12px'">FYP2013/14 - The NFC-Enabled Anti-Counterfeiting System For Wine Industry (NAS),
+                   <br>
+                Mr. YIU CHUNG KIT & DR. S.H.CHOI, IMSE OF THE UNIVERSITY OF HONG KONG, All Rights Reserved. <br> Powered By:
+                </span></P>
+
+                <a href= "http://www.hku.hk/">
+                <img src="@Url.Content("~/Content/HKU100logo_libr.png")" border="0" width="16%" />
+                <br>
+                <a href= "http://www.hku.hk/">
+                <img src="@Url.Content("~/Content/hku-logo.png")" border="0" width="20%" />
+                <br>
+                <a href= "http://www.imse.hku.hk//">
+                <img src="@Url.Content("~/Content/mod_index_dept.bmp")" border="0" width="30%" />
+            </div>
+        </footer>
+    
+</body>
+</html>

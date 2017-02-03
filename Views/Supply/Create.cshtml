@@ -1,0 +1,124 @@
+﻿@model FYPNFCWineSystem.Models.SupplyChain
+
+@{
+    ViewBag.Title = "Create Your Supply Chain Partner";
+}
+
+<h2>Create Your Supply Chain Partner</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Details of Your Supply Chain Partner</legend>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PartnerName, "Partner Name")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PartnerName)
+            @Html.ValidationMessageFor(model => model.PartnerName)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GroupID, "Under Group")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("GroupID", String.Empty)
+            @Html.ValidationMessageFor(model => model.GroupID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Address, "Billing Address")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Address)
+            @Html.ValidationMessageFor(model => model.Address)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Phone, "Phone")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Phone)
+            @Html.ValidationMessageFor(model => model.Phone)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email, "E-mail")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MarketValue, "Market Value (USD)")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MarketValue)
+            @Html.ValidationMessageFor(model => model.MarketValue)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nationality, "Nationality")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nationality)
+            @Html.ValidationMessageFor(model => model.Nationality)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PastTransactionSummary, "Past Transaction Summary")
+        </div>
+        <div class="editor-field">
+           @Html.TextAreaFor(model => model.PastTransactionSummary, new { rows = 20, cols = 100 })
+            @Html.ValidationMessageFor(model => model.PastTransactionSummary)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TrustStatusID, "Trust Status")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("TrustStatusID", String.Empty)
+            @Html.ValidationMessageFor(model => model.TrustStatusID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DateOfEstablishment, "Date of Establishment")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DateOfEstablishment)
+            @Html.ValidationMessageFor(model => model.DateOfEstablishment)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WID, "Wine Invloved")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("WID", String.Empty)
+            @Html.ValidationMessageFor(model => model.WID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CompanySize, "Size of the Company")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CompanySize)
+            @Html.ValidationMessageFor(model => model.CompanySize)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index") |
+    @Html.ActionLink("Add Wine", "Create", "ActiveWine") |
+    @Html.ActionLink("Add New Project", "Create", "Project") |
+    @Html.ActionLink("Add New Partner", "Create", "Supply")
+</div>

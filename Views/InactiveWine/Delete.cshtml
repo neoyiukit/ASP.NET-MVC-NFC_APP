@@ -1,0 +1,117 @@
+﻿@model FYPNFCWineSystem.Models.ActiveWine
+
+@{
+    ViewBag.Title = "Delete Your Invalid Wine";
+}
+
+<h2>Delete Your Invalid Wine</h2>
+
+<h3>Are you sure you want to delete the record?</h3>
+<fieldset>
+    <legend><div>Delete @Html.DisplayFor(model => model.WineTitle)</div></legend>
+
+    @{ var picPath = "~/"+Model.WinePic; }
+    <div class=" pull-right">
+        <div class="display-label" >Wine Picture:</div>
+        <img class=" img-responsive" style="width:300px" src="@Url.Content(picPath)"/>
+    </div>
+
+       <div class="display-label" style="text-decoration: underline overline; color: #721818;">Wine Name:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.WineTitle)
+    </div>
+
+    <div class="display-label" style="text-decoration: underline overline; color: #721818;">Wine Category:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.WineCategory.WineCategoryName)
+    </div>
+
+    <div class="display-label" style="text-decoration: underline overline; color: #721818;">Wine Producer:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Producer)
+    </div>
+        
+    <div class="display-label" style="text-decoration: underline overline; color: #721818;">Price:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Price)
+    </div>
+
+    <div class="display-label" style="text-decoration: underline overline; color: #721818;">Wine NFC Tag ID:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TagID)
+    </div>
+
+
+    <div class="display-label" style="text-decoration: underline overline; color: #721818;">Wine Description:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.WineDescription)
+    </div>
+
+    <div class="display-label" style="text-decoration: underline overline; color: #721818;">Vintage:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Vintage)
+    </div>
+
+    <div class="display-label" style="text-decoration: underline overline; color: #721818;">Latest Transaction Date:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastTransDate)
+    </div>
+
+    <div class="display-label" style="text-decoration: underline overline; color: #721818;">Discount of the Wine:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Discount)
+    </div>
+
+    <div class="display-label" style="text-decoration: underline overline; color: #721818;">Country of Origin:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Country)
+    </div>
+
+    <div class="display-label" style="text-decoration: underline overline; color: #721818;">Region of Origin:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Region)
+    </div>
+
+    <div class="display-label" style="text-decoration: underline overline; color: #721818;">Involved in Project:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Project.ProjectName)
+    </div>
+
+    <div class="display-label" style="text-decoration: underline overline; color: #721818;">Last Transferred By:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastSupplyChain)
+    </div>
+
+    <div class="display-label" style="text-decoration: underline overline; color: #721818;">Status of Wine:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.WineStatu.WineStatusName)
+            </div>
+
+    <div class="display-label" style="text-decoration: underline overline; color: #721818;">Transaction History:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.WineTransactionHistory)
+    </div>
+    @*
+    <div class="display-label" style="text-decoration: underline overline; color: #721818;">Date of Production:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateOfProduction)
+    </div>
+
+    <div class="display-label" style="text-decoration: underline overline; color: #721818;">Rejection Reasons:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Rejection.RejectionReason)
+    </div>
+
+    <div class="display-label" style="text-decoration: underline overline; color: #721818;">Date of Rejection:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RejectionDate)
+    </div>
+    *@
+</fieldset>
+
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -1,0 +1,169 @@
+﻿@model FYPNFCWineSystem.Models.ActiveWine
+
+@{
+    ViewBag.Title = "Create Your Wine";
+}
+
+<h2>Create Your Wine</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Please enter information of your wine.</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WineTitle, "Wine Name")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WineTitle)
+            @Html.ValidationMessageFor(model => model.WineTitle)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WineCategoryID, "Wine Category")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("WineCategoryID", String.Empty)
+            @Html.ValidationMessageFor(model => model.WineCategoryID)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WineStatusID, "Wine Status")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("WineStatusID", String.Empty)
+            @Html.ValidationMessageFor(model => model.WineStatusID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WineDescription, "Wine Description")
+        </div>
+        <div class="editor-field">
+           @Html.TextAreaFor(model => model.WineDescription, new { rows = 20, cols = 100 })
+            @Html.ValidationMessageFor(model => model.WineDescription)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Vintage, "Vintage")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Vintage)
+            @Html.ValidationMessageFor(model => model.Vintage)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LastTransDate, "Latest Transaction Date")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LastTransDate)
+            @Html.ValidationMessageFor(model => model.LastTransDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Discount, "Discount for the Wine")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Discount)
+            @Html.ValidationMessageFor(model => model.Discount)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Country, "Country of Origin")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Country)
+            @Html.ValidationMessageFor(model => model.Country)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Region, "Region of Origin")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Region)
+            @Html.ValidationMessageFor(model => model.Region)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProjectID, "in Project")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ProjectID", String.Empty)
+            @Html.ValidationMessageFor(model => model.ProjectID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Price, "Price of the Wine")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Price)
+            @Html.ValidationMessageFor(model => model.Price)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LastSupplyChain, "Transferred by?")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LastSupplyChain)
+            @Html.ValidationMessageFor(model => model.LastSupplyChain)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TagID, "The NFC Tag ID")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TagID)
+            @Html.ValidationMessageFor(model => model.TagID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Producer, "The Producer of the Wine")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Producer)
+            @Html.ValidationMessageFor(model => model.Producer)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WineTransactionHistory, "Past Transaction Record")
+        </div>
+        <div class="editor-field">
+           @Html.TextAreaFor(model => model.WineTransactionHistory, new { rows = 20, cols = 100 })
+            @Html.ValidationMessageFor(model => model.WineTransactionHistory)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DateOfProduction, "Date of Production")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DateOfProduction)
+            @Html.ValidationMessageFor(model => model.DateOfProduction)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WinePic, "WinePic")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WinePic)
+            @Html.ValidationMessageFor(model => model.WinePic)
+        </div>
+
+        <label for=""> Wine Picture Upload </label>
+        <input type="file" />
+        <br />
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index") |
+    @Html.ActionLink("Add Inactive Wine", "Create", "InactiveWine") |
+    @Html.ActionLink("Add New Project", "Create", "Project") |
+    @Html.ActionLink("Add New Partner", "Create", "Supply")
+</div>

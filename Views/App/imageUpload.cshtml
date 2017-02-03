@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "imageUpload";
+}
+
+<h2>imageUpload</h2>
+@if (ViewData["error"] != null) { 
+    @ViewData["error"]
+}
+<form action="" method="post" enctype="multipart/form-data">
+
+  <label for="WID">WID:</label>
+  <input type="text" name="WID" id="WID" />
+
+  <label for="file">Filename:</label>
+  <input type="file" name="file" id="file" />
+
+  <input type="submit" />
+</form>

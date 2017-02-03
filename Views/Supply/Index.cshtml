@@ -1,0 +1,139 @@
+﻿@model PagedList.IPagedList<FYPNFCWineSystem.Models.SupplyChain>
+
+@{
+    ViewBag.Title = "Your Supply Chain Partner";
+}
+
+<h2>Your Supply Chain Partner</h2>
+@using (Html.BeginForm())
+{
+    <p>
+    Search by Partner Name: @Html.TextBox("SearchString")
+    <input type="submit" value="Search" class="btn btn-primary"/> </p>
+}
+
+<p>
+    @Html.ActionLink("Create New Supply Chain Partner ", "Create" ,null, new { @class="btn btn-primary" })
+    @Html.ActionLink("Create New Partner Group", "AddGroup",null, new { @class="btn btn-primary" })
+    @Html.ActionLink("View Partner Group", "ViewGroup",null, new { @class="btn btn-primary" })
+</p>
+<hr size="3" align="center" noshade width="100%" color="#721818">
+
+<table>
+    <tr>
+
+        <th><center>
+            @Html.ActionLink("Partner Name", "Index", new { sortOrder=ViewBag.NameSortParm, currentFilter=ViewBag.CurrentFilter })
+        </center></th>
+        <th><center>
+            @Html.ActionLink("Market Value", "Index", new { sortOrder = ViewBag.MarketValueSortParm, currentFilter = ViewBag.CurrentFilter })
+        </center></th>
+        <th><center>
+            @Html.ActionLink("Group Name", "Index", new { sortOrder = ViewBag.GroupSortParm, currentFilter = ViewBag.CurrentFilter })
+        </center></th>
+        <th><center>
+            @Html.ActionLink("Trust Status", "Index", new { sortOrder=ViewBag.TrustStatusSortParm, currentFilter=ViewBag.CurrentFilter })
+        </center></th>
+        <th><center>
+            Phone
+        </center></th>
+        <th><center>
+            E-mail
+        </center></th>
+        <th><center>
+            Actions
+        </center></th>
+         <th><center>
+            Details
+        </center></th>
+        <th></th>
+    </tr>
+
+@*
+
+
+@foreach (var item in Model) {
+    <tr align="center">
+        <td>
+            @Html.DisplayFor(modelItem => item.PartnerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MarketValue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Group.GroupName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrustStatu.TrustStatusName)
+        </td>
+                <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+                <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SupplyID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SupplyID })
+        </td>
+        <td>
+            @Html.ActionLink("Click to view " + @Html.DisplayFor(modelItem => item.PartnerName ), "Details", new { id=item.SupplyID })
+        </td>
+    </tr>
+}
+
+</table>
+
+    *@
+
+<div class="row">
+    @foreach (var item in Model) {
+        <div class="col-xs-4">
+
+            <div class="thumbnail">
+          <img class="img-responsive" src="@Url.Content(item.contactPic)" style="width: 300px; height: 200px;">
+          <div class="caption">
+            <h3>@Html.DisplayFor(modelItem => item.PartnerName)</h3>
+            <p>@item.Email</p>
+            <p>@Html.ActionLink("Detail ", "Details", new { id = item.SupplyID }, new { @class=" btn btn-default" })
+            @Html.ActionLink("Edit", "Edit", new { id=item.SupplyID }, new { @class=" btn btn-default" })
+            @Html.ActionLink("Delete", "Delete", new { id=item.SupplyID }, new { @class=" btn btn-default" })
+            </p>
+          </div>
+        </div>
+        </div>
+    }
+
+</div>
+<br>
+<br>
+<div>
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+    of @Model.PageCount
+     
+    @if (Model.HasPreviousPage)
+    {
+        @Html.ActionLink("<<", "Index", new { page = 1, currentFilter = ViewBag.CurrentFilter })
+        @Html.Raw(" ");
+        @Html.ActionLink("< Prev", "Index", new { page = Model.PageNumber - 1, currentFilter = ViewBag.CurrentFilter })
+    }
+    else
+    {
+        @:<<
+        @Html.Raw(" ");
+        @:< Prev
+    }
+     
+    @if (Model.HasNextPage)
+    {
+        @Html.ActionLink("Next >", "Index", new { page = Model.PageNumber + 1, currentFilter = ViewBag.CurrentFilter })
+        @Html.Raw(" ");
+        @Html.ActionLink(">>", "Index", new { page = Model.PageCount, currentFilter = ViewBag.CurrentFilter })
+    }
+    else
+    {
+        @:Next >
+        @Html.Raw(" ")
+        @:>>
+    }
+</div>

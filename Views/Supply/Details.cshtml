@@ -1,0 +1,76 @@
+﻿@model FYPNFCWineSystem.Models.SupplyChain
+
+@{
+    ViewBag.Title = "Details of Supply Chain Partner";
+}
+
+<h2>Details of Supply Chain Partner</h2>
+
+<fieldset style="height:90%; vertical-align:middle;">
+    <legend><div>Details of @Html.DisplayFor(model => model.PartnerName)</div></legend>
+
+
+   <div class="display-label" style="text-decoration: underline overline; color: #721818;">Partner Name:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PartnerName)
+    </div>
+ 
+<div class="display-label" style="text-decoration: underline overline; color: #721818;">Group Name:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Group.GroupName)
+    </div>
+
+   <div class="display-label" style="text-decoration: underline overline; color: #721818;">Market Value:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MarketValue)
+    </div>
+
+<div class="display-label" style="text-decoration: underline overline; color: #721818;">Address:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Address)
+    </div>
+
+<div class="display-label" style="text-decoration: underline overline; color: #721818;">Phone:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Phone)
+    </div>
+
+<div class="display-label" style="text-decoration: underline overline; color: #721818;">Email:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+<div class="display-label" style="text-decoration: underline overline; color: #721818;">Nationality:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nationality)
+    </div>
+<div class="display-label" style="text-decoration: underline overline; color: #721818;">Past Transaction Summary:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PastTransactionSummary)
+    </div>
+
+<div class="display-label" style="text-decoration: underline overline; color: #721818;">Trust Status:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TrustStatu.TrustStatusName)
+    </div>
+
+<div class="display-label" style="text-decoration: underline overline; color: #721818;">Date of Establishment:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateOfEstablishment)
+    </div>
+
+<div class="display-label" style="text-decoration: underline overline; color: #721818;">Involved Wine:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ActiveWine.WineTitle)
+    </div>
+
+<div class="display-label" style="text-decoration: underline overline; color: #721818;">Size of Company:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CompanySize)
+    </div>
+    </fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.SupplyID }) |
+    @Html.ActionLink("Delete", "Delete", new { id=Model.SupplyID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
